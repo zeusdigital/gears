@@ -1,0 +1,1630 @@
+/*
+Name: Gears UI
+Version: 1
+Author: Designed by ZEUS
+Author URI: www.DesignedbyZEUS.com
+Description: Bootstrap based HTML5 Template
+*/
+@charset "utf-8";
+/********************************************************************/
+/* 1. Get Google fonts */
+/********************************************************************/
+/* Primary Font - Font-Family:Roboto */
+@import url(http://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700,900,300italic,400italic,500italic,700italic,900italic);
+/* Serif Font - Font-Family:Roboto Slab */
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700);
+/* Fancy Fonts - Headings - Titles - Fancy Blocks */
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700);
+/* Core Typography */
+@import url(css/gears-typography.css);
+
+/********************************************************************/
+/* Gears Bootstrap Skin */
+/* Switching everything to Material Design Color Palette
+/********************************************************************/
+
+/* Media Query Guide */
+Small devices (landscape phones, 34em and up)
+@media (min-width: 34em) { ... }
+
+Medium devices (tablets, 48em and up)
+@media (min-width: 48em) { ... }
+
+Large devices (desktops, 62em and up)
+@media (min-width: 62em) { ... }
+
+Extra large devices (large desktops, 75em and up)
+@media (min-width: 75em) { ... }
+/*********************************************************************/
+/* Core Colors */
+.text-primary{
+	color:#1977d3 !important;
+}
+.bg-primary{
+	background-color:#1977d3 !important;
+}
+.border-primary{
+	border-color:#1977d3 !important;
+}
+.text-accent{
+	color:#00c853 !important;
+}
+.bg-accent{
+	background-color:#00c853 !important;
+}
+.border-accent{
+	border-color:#00c853 !important;
+}
+/* Links */
+a {
+	color: #1977d3;/* Set to text-primary */
+	-webkit-transition: all .2s ease-out; /* Smooth Hover Effect */
+	-moz-transition: all .2s ease-out;
+	-o-transition: all .2s ease-out;
+	-ms-transition: all .2s ease-out;
+	transition: all .2s ease-out;
+}
+a,a:hover,a:active, a.active, a:focus, a.focus {
+	color: #1977d3;
+	text-decoration: none;
+	outline: none;
+}
+a:hover{
+	color: #333333;
+}
+.dark a{
+	color:#FFFFFF;
+}
+.dark a:hover{
+	color:rgba(255,255,255,0.7);
+}
+/**********************************************************/
+/* Base Elements
+/**********************************************************/
+/* Horizontal Line */
+/* Change the color on the go using border color swatches */
+/* <hr class="border-red"> */
+hr {
+	border: 0px;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	margin: 30px 0;
+	height:0;
+	display:block;
+}
+.dark hr{
+	border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+hr.dual{
+	height:7px;
+	border-top: 1px solid rgba(0,0,0,0.1);
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.dark hr.dual{
+	border-top: 1px solid rgba(255,255,255,0.1);
+	border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+hr.dotted{
+	border-style:dotted;
+}
+hr.dashed{
+	border-style:dashed;
+}
+hr.x2{
+	border-width:2px;
+}
+/* Fancy Dividers */
+hr.colorbar{
+	border:0;
+	border-radius:999px;
+	height:3px;
+	background:rgba(0,0,0,0.3);
+	margin:30px 0;
+	display:inline-block;
+}
+.dark hr.colorbar{
+	background:rgba(255,255,255,0.1);
+}
+hr.colorbar.x2{
+	height:5px;
+}
+hr.colorbar.mini{
+	width:90px;
+}
+hr.colorbar.micro{
+	width:30px;
+}
+hr.double-margin{
+	margin-top:60px;
+	margin-bottom:60px;
+}
+hr.triple-margin{
+	margin-top:90px;
+	margin-bottom:90px;
+}
+/* Dividers with Icon */
+/* <div class="divider"><i class"fa fa-star"></i></div> */
+.divider {
+	position: relative;
+	margin: 55px auto;
+	height: 1px;
+	border-bottom:1px solid rgba(0,0,0,0.1);
+	text-align: center;
+	color:rgba(0,0,0,0.3);
+}
+.divider i {
+	width: 35px;
+	height: 35px;
+	line-height: 33px;
+	background: #FFF;
+	border: 1px solid #ccc;
+	border-radius: 50%;
+	font-size: 18px !important;
+	text-align: center;
+	position: absolute;
+	left: 0;
+	margin-top: -17px;
+}
+.align-center .divider i,
+.divider.align-center i {
+	left: 50%;
+	margin-left: -17px;
+}
+
+/* Gears Special Buttons */
+/* Button color can be changed on the go using color utility classes, check gears-swatches.css for available options 
+/* <a class="g-btn bg-amber border-amber">Click Me</a>
+/* Hover and Active states will work even after adding color classes
+/* Use class "g-btn-alt" for stroke/border only buttons
+/* <a class="g-btn g-btn-alt text-amber border-amber">Click Me</a>
+*/
+.g-btn{
+	position:relative;
+	overflow:hidden;
+    padding: 0 25px;
+	font-family:"Roboto Condensed";
+    font-size: 1rem;
+    font-weight: 400;
+	height:40px;
+    line-height: 40px;
+	color:#FFFFFF;
+	text-shadow:1px 1px 2px rgba(0,0,0,0.1);
+	background:#1977d3;
+    white-space: nowrap;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	transform: translateZ(0);
+	
+	display: inline-flex;
+	align-content:center;
+}
+.g-btn{
+	margin-right:.5rem;
+	margin-bottom:.5rem;
+}
+.g-btn:hover, .g-btn:active, .g-btn:focus {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.g-btn:active {
+	box-shadow: inset 0px 0px 30px 30px rgba(0,0,0,0.3);
+}
+.g-btn::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:rgba(0,0,0,0.1);
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+.g-btn:hover::before {
+    transform: scaleX(1);
+}
+/* Icons in button */
+.g-btn i{
+	font-size:1.5rem;
+	padding-right:.5rem;
+}
+/* Icon on the right */
+/* <a class="g-btn icon-right"> */
+.g-btn.icon-right i{
+	padding-right:0;
+	padding-left:.5rem;
+}
+/* Stroked - border only button */
+.g-btn-alt,
+a.g-btn-alt{
+	background: none;
+	color: #1977d3;
+	border:2px solid #1977d3;
+	padding:0 23px;
+	height:36px;
+	line-height:36px;
+}
+.g-btn-alt:hover, .g-btn-alt:active, .g-btn-alt:focus{
+	color: #1977d3;
+}
+/* Buttons with smooth border */
+/* <a class="g-btn smooth">Click Me</a> */
+/* Buttons with rounded border */
+/* <a class="g-btn pill">Click Me</a> */
+/* Button Size */
+.g-btn-xs{
+	padding:5px 25px;
+}
+.g-btn-alt.g-btn-xs{
+	padding:3px 23px;
+}
+.g-btn-xl{
+	padding:15px 25px;
+}
+.g-btn-alt.g-btn-xl{
+	padding:13px 23px;
+}
+/* Icon only buttons */
+.icon-only i{
+	padding:0;
+}
+/* Gears Special Backgrounds */
+.bg-polygons {
+	background:url(img/dark-polygons.png);
+}
+.bg-city-1{
+	background:url(img/unsplash-stock-12.jpg) bottom fixed;
+	background-size:cover;
+}
+.bg-city-1-black{
+	background:linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.95) 100%), url(img/unsplash-stock-12.jpg) bottom fixed;
+	background-size:cover, cover;
+}
+/********************************************************************/
+/* Three Level Responsive Menu */
+/********************************************************************/
+.topbar{
+	position:relative;
+	border-bottom:1px solid rgba(0,0,0,0.1);
+}
+.topbar ul{
+	list-style:none;
+	font-size:0;
+	padding:0;
+	margin:0;
+}
+.topbar ul > li{
+	display:inline-flex;
+	vertical-align:middle;
+	margin-right:10px;
+	font-size:14px;
+	line-height:18px;
+	color:rgba(255,255,255,0.7);
+}
+.topbar ul > li:last-child{
+	margin-right:0;
+}
+.topbar strong{
+	text-transform:uppercase;
+}
+.topbar i{
+	margin-right:5px;
+}
+/* Less margin for social media icons, Get rid of it if you don't want them to be icon only */
+.topbar a{
+	line-height:16px;
+	color:rgba(255,255,255,0.3);
+	padding:10px 0;
+	display:inline-block;
+}
+.topbar a:hover{
+	color:rgba(255,255,255,0.7);
+}
+/* Badges next to Account and Cart icons */
+.head-user ul > li{
+	margin:0;
+}
+.head-user a{
+	padding-left:15px;
+	padding-right:15px;
+}
+.head-user-social i{
+	margin:0;
+}
+.head-user-acc span,
+.head-user-cart span{
+	background:#333;
+	font-size:12px;
+	line-height:1;
+	color:#FFFFFF;
+	padding:2px 5px;
+	border-radius:3px;
+	display:inline-block;
+}
+
+.navigation{
+	z-index:9999;
+	background:#FFFFFF;
+}
+.dark .navigation,
+.navigation.dark{
+	background:none;
+}
+.logo{
+	padding:10px 0;
+	display:block;
+}
+.logo img{
+	max-height:70px;
+	max-width:100%;
+	transition:all .3s ease-in-out;
+}
+.main-nav ul{
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+.main-nav ul li{
+	display:inline-block;
+}
+.main-nav a{
+	display:inline-block;
+	color:rgba(0,0,0,0.9);
+	font-size:16px;
+	font-weight:500;
+	line-height:90px;
+	padding:0 10px;
+	text-transform:uppercase;
+	position:relative;
+	transition:all .3s ease-in-out;
+}
+.dark .main-nav a,
+.main-nav.dark a{
+	color:rgba(255,255,255,0.7);
+}
+.main-nav a:hover{
+	color:#1977d3;
+}
+.main-nav a::before{
+	content:"";
+	display:block;
+	width:0;
+	height:3px;
+	background:#1977d3;
+	position:absolute;
+	left:0;
+	top:0;
+	transition:all .3s ease-in-out;
+}
+.main-nav a:hover::before{
+	width:100%;
+}
+
+.sticky{
+	position:fixed;
+	top:0;
+	width:100%;
+	background:#FFFFFF;
+	box-shadow:1px 1px 1px rgba(0,0,0,0.1);
+}
+.dark .sticky,
+.sticky.dark{
+	background:rgba(0,0,0,0.95);
+	box-shadow:none;
+}
+.sticky .logo img{
+	max-height:50px;
+}
+.sticky .main-nav a{
+	line-height:70px;
+}
+/* Inner Pages Header */
+.page-intro {
+	padding:70px 0;
+	position:relative;
+}
+@media(min-width:62em){
+	.page-intro{
+		padding:200px 0 70px;
+	}
+}
+.dark .page-intro,
+.page-intro.dark{
+	color:rgba(255,255,255,0.55);
+}
+.dark .page-intro a,
+.page-intro.dark a{
+	color:#1977d3;
+}
+.dark .page-intro a:hover,
+.page-intro.dark a:hover{
+	color:#FFFFFF;
+}
+.page-intro .breadcrumb {
+	background: none;
+	padding: 0;
+	margin-bottom: 10px;
+}
+.page-intro h2 {
+	font-size:2.75rem;
+	line-height: 1;
+	margin: 0px;
+}
+.dark .page-intro h2,
+.page-intro.dark h2 {
+	color:#FFFFFF;
+}
+
+/********************************************************************/
+/* Icon Boxes */
+/********************************************************************/
+/* Icon Box - Base Icon Box Setup */
+.icon-box {
+	margin-bottom: 50px;
+	position: relative;
+}
+.icon-box-icon {
+	margin-bottom: 40px;
+}
+.icon-box-icon i {
+	font-size: 60px;
+	color: #1977d3; /* text-primary */
+	display: inline-block;
+	overflow: hidden;
+	padding: 1px /* fixes rendering issue in some browsers */
+}
+.icon-box-icon-framed i, .icon-box-icon-filled i {
+	font-size: 42px;
+	text-align: center;
+	line-height: 108px;
+	width: 110px;
+	height: 110px;
+}
+.icon-box-icon-framed i {
+	border: 2px solid #1977d3; /* border-primary */
+}
+.icon-box-icon-filled i {
+	color: #fff;
+	background: #1977d3; /* bg-primary */
+}
+.icon-box-icon-mega i {
+	font-size: 36px;
+	line-height: 148px;
+	width: 150px;
+	height: 150px;
+}
+.icon-box-icon-smooth i {
+	border-radius: 3px;
+}
+.icon-box-icon-circle i {
+	border-radius: 50%;
+}
+.icon-box-icon-pill i {
+	border-radius: 999px;
+}
+.icon-box-content {
+	overflow: hidden;
+}
+.icon-box-title {
+	font-weight: 700;
+	font-size: 18px;
+	color: #3C3F47;
+	margin-bottom: 15px;
+}
+.icon-box-description {
+}
+/* Inlined Icon Boxes - Icons on Left side */
+.icon-box-inlined {
+}
+.icon-box-inlined .icon-box-icon {
+	display: inline-block;
+	float: left;
+	margin-right: 20px;
+}
+.icon-box-inlined .icon-box-icon i {
+	font-size: 36px;
+	line-height: 48px;
+	border-bottom: 2px solid #1977d3;
+}
+.icon-box-inlined .icon-box-icon-framed i, .icon-box-inlined .icon-box-icon-filled i {
+	font-size: 22px;
+	line-height: 48px;
+	width: 50px;
+	height: 50px;
+	border: 0px;
+}
+.icon-box-inlined .icon-box-icon-framed i {
+	border: 2px solid #1977d3;
+}
+.icon-box-inlined .icon-box-icon-filled i {
+	background: #1977d3;
+}
+.icon-box-inlined .icon-box-content {
+	padding-top: 15px;
+}
+/* Inlined Icon Boxes - Right Aligned */
+/* Add class "align-right" or "responsive-right" to main "icon-box" conatainer */
+/* The difference between "align-right" and "responsive-right" is:
+/* - align-right will stay right aligned on all devices */
+/* - responsive-right will automatically get aligned to left on mobile devices */
+.icon-box-inlined.align-right .icon-box-icon {
+	float: right;
+	margin-right: 0px;
+	margin-left: 20px;
+}
+.icon-box-inlined.responsive-right {
+	text-align: left;
+}
+.icon-box-inlined.responsive-right .icon-box-icon {
+	float: left;
+	margin-right: 20px;
+	margin-left: 0px;
+}
+
+@media (min-width:992px) {
+.icon-box-inlined.responsive-right {
+	text-align: right;
+}
+.icon-box-inlined.responsive-right .icon-box-icon {
+	float: right;
+	margin-right: 0px;
+	margin-left: 20px;
+}
+}
+/* Icon boxes - light skin - For dark colored background */
+.icon-box.light-skin .icon-box-icon i {
+	color: #FFFFFF; /* text-white */
+}
+.icon-box-inlined.light-skin .icon-box-icon i {
+	border-bottom: 2px solid #ffffff;
+}
+.icon-box.light-skin .icon-box-icon-framed i {
+	border-color: #FFFFFF; /* border-white */
+}
+.icon-box.light-skin .icon-box-icon-filled i {
+	color: #757575;
+	background: #FFFFFF; /* bg-white */
+}
+.icon-box.light-skin .icon-box-title {
+	color: #FFFFFF; /* text-white */
+	font-weight: 400;
+	text-shadow: 1px 1px 1px rgba(0,0,0,.1);
+}
+.icon-box.light-skin .icon-box-description {
+	color: rgba(255,255,255,0.70);
+	text-shadow: 1px 1px 1px rgba(0,0,0,.1);
+}
+/********************************************************************/
+/* Counter Box
+/* Animated counters
+/* <span class="gears-counter" data-from="0" data-to="100"></span>
+/********************************************************************/
+.gears-counter-box {
+	margin-bottom: 50px;
+}
+
+@media (min-width:992px) {
+.gears-counter-box {
+	margin-bottom: 20px;
+}
+}
+.gears-counter-box .counter-icon {
+	font-size: 48px;
+	color: #1977d3;
+	padding: 1px;
+	margin-bottom: 20px;
+}
+.gears-counter-box .counter-number {
+	font-family: "Roboto Condensed";
+	font-size: 54px;
+	line-height: 1;
+	font-weight: 300;
+	color: #212121;
+	margin-bottom: 10px;
+}
+.dark .counter-number {
+	color: rgba(255,255,255,.95);
+}
+.gears-counter-box .counter-title {
+	font-family: "Roboto Condensed";
+	color: #9e9e9e;
+}
+/********************************************************************/
+/* Gears Charts
+/* Pie Charts / Round Counters / Skills
+/* <div class="gears-chart" data-percent="75" data-bar-color="#ffffff" data-bar-color="#ffffff">75%</div>
+/********************************************************************/
+.gears-chart {
+	position: relative;
+	display: inline-block;
+	width: 150px;
+	height: 150px;
+	line-height: 150px;
+	margin-bottom: 20px;
+	font-family: "Roboto Condensed";
+	font-size: 36px;
+	font-weight: 300;
+	text-align: center;
+	color: #9e9e9e;
+}
+.gears-chart-box {
+	margin-bottom:50px;
+}
+@media(min-width:992px){
+	.gears-chart-box {
+		margin-bottom:50px;
+	}
+}
+.gears-chart canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.gears-chart-box .chart-title {
+	font-family: "Roboto Condensed";
+	color: #212121;
+	text-transform: uppercase;
+}
+.dark .chart-title {
+	color:rgba(255,255,255,0.9);
+}
+/********************************************************************/
+/* Gears Progress bar
+/* Progress Bars
+/* <div class="gears-progress-bar"><div class="progress"><div class="progress-bar" style="width: 90%;"></div></div></div>
+/********************************************************************/
+
+.gears-progress-bar .progress{
+	height:3px;
+	overflow:visible;
+}
+.dark .progress{
+	background:rgba(255,255,255,0.1);
+}
+.progress-bar-title{
+	font-family:"Roboto Condensed";
+	color:#212121;
+	font-weight:700;
+}
+.dark .progress-bar-title{
+	color:#FFFFFF;
+	font-weight:400;
+}
+.gears-progress-bar .progress-bar{
+	position:relative;
+}
+.gears-progress-bar .progress-bar span{
+	position:absolute;
+	color:#9E9E9E;
+	top:3px;
+	right:0;
+}
+/********************************************************************/
+/* Gears Countdown
+/* Countdown Timer
+/* <div class="gears-countdown" data-countdown="2017/01/01"></div>
+/* Class "gears-countdown" is for styling only, not required by plugin
+/* Titles ( hours/Mins etc) canbe customized in custom.js
+/********************************************************************/
+.gears-countdown{
+	font-family:"Roboto Condensed";
+	font-weight:700;
+	text-transform:uppercase;
+}
+.gears-countdown span{
+	display:inline-block;
+	padding:0 30px 0 0;
+}
+.gears-countdown span:last-child{
+	padding-right:0;
+}
+.gears-countdown span span{
+	display:block;
+	padding:0;
+	font-size:40px;
+	font-weight:300;
+	line-height:1;
+	color:#212121;
+}
+@media (min-width:992px){
+	.gears-countdown span span{
+		font-size:90px;
+	}
+}
+.dark .gears-countdown span span{
+	color:#ffffff;
+}
+/********************************************************************/
+/* Gears Frames and Cards
+/* Boxed Content, Featured Boxes
+/* Add padding on the go <div class="gears-card padding-20">...</div>
+/* Set border color on frames <div class="gears-card gears-frame padding-20 padding-horizontal border-amber">...</div>
+/* Set background color on cards <div class="gears-card padding-20 bg-blue">...</div>
+/* Color utilities classes can be found in color-swatches.css
+/********************************************************************/
+.gears-card {
+	font-size:14px;
+	color:#9E9E9E;
+	position: relative;
+	margin-bottom: 30px;
+	background:#FFFFFF;
+	box-shadow: 0px 1px 1.5px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.24);
+	overflow:hidden;
+}
+.gears-card:hover{
+	box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.24), 0px 1px 1px rgba(0, 0, 0, 0.24);
+}
+.gears-frame {
+	border:2px solid #F5F5F5;
+	background:none;
+	box-shadow:none;
+	font-size:14px;
+	position: relative;
+	margin-bottom: 30px;
+	overflow:hidden;
+}
+.gears-card-smooth {
+	border-radius:5px;
+}
+.gears-card-image {
+	position:relative;
+	min-height:200px;
+	margin-bottom:15px;
+	background:#f5f5f5;
+	background-size:cover;
+	background-position:center;
+}
+.gears-card-image .gears-overlay{
+	min-height:200px;
+}
+.gears-card-label {
+	background:#EEEEEE;
+	font-family:'Roboto Condensed';
+	font-weight:700;
+	font-size:18px;
+	line-height:1;
+	color:#212121;
+	text-transform:uppercase;
+	padding:30px;
+	margin:0;
+	margin-top:-15px;
+}
+.gears-card-label a{
+	color:#212121;
+}
+.gears-card-label a:hover{
+	color:#1977d3;
+}
+.gears-card-badge,
+a.gears-card-badge {
+	position:relative;
+	display:inline-block;
+	font-family:'Roboto Condensed';
+	font-size:16px;
+	color:#fff;
+	text-transform:uppercase;
+	background:#9e9e9e;
+	padding:5px 15px;
+	border-radius:2px;
+	margin:0 25px;
+	margin-top:-45px;
+}
+.align-center .gears-card-badge,
+.align-center a.gears-card-badge {
+	margin-left:0;
+	margin-top:-15px;
+}
+.gears-card-image .gears-card-badge {
+	position:absolute;
+	margin:0;
+	top:20px;
+	right:20px;
+}
+.gears-card-counter {
+	position:absolute;
+	top:0;
+	left:0;
+	display:inline-block;
+	font-family:'Roboto Condensed';
+	font-size:16px;
+	color:#fff;
+	text-transform:uppercase;
+	background:#1977d3;
+	padding:10px 15px;
+}
+.gears-card-content {
+	padding:0 30px 25px;
+}
+.gears-card-image .gears-card-content {
+	position:absolute;
+	left:0;
+	bottom:0;
+	color:#fff;
+	background:rgba(0,0,0,.7);
+	padding-bottom:10px;
+}
+.gears-card-title {
+	font-family:'Roboto Condensed';
+	font-weight:300;
+	font-size:24px;
+	line-height:1.2;
+	padding:10px 0;
+	margin:0;
+}
+.gears-card-title a{
+	color: rgba(0, 0, 0, 0.87);
+}
+.gears-card-title a:hover{
+	color: #1977d3;
+}
+.gears-card-image .gears-card-title {
+	color:#fff;
+}
+.gears-card-action{
+	position:absolute;
+	width:110px;
+	height:110px;
+	left:25px;
+	bottom:-55px;
+	border-radius:50%;
+	border:5px solid #fff;
+	overflow:hidden;
+	text-align:center;
+}
+.gears-card-action i{
+	color:#fff;
+	font-size:36px;
+	line-height:105px;
+}
+.align-center .gears-card-action{
+	left:50%;
+	margin-left:-55px;
+}
+.gears-card-action img{
+	width:100%;
+}
+
+/********************************************************************/
+/* Gears Team and Bio
+/********************************************************************/
+.gears-team{
+	margin-bottom:50px;
+}
+@media (min-width:992px){
+.gears-team{
+	margin-bottom:15px;
+}
+}
+.team-image{
+	position:relative;
+	overflow:hidden;
+	border-radius:5px;
+	margin-bottom:15px;
+}
+.team-image img{
+	width:100%;
+}
+/* Experiment - use only when you have perfect square images */
+.team-image.team-image-rounded{
+	border-radius:50%;
+	padding:10px;
+	border:3px solid rgba(0,0,0,0.15);
+	border-bottom-color:transparent;
+	transition:all .2s ease-in-out;
+	max-width:250px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.dark .team-image.team-image-rounded{
+	border:3px solid rgba(255,255,255,0.15);
+	border-bottom-color:transparent;
+}
+.gears-team:hover .team-image.team-image-rounded{
+	border-bottom-color:#1977d3;
+}
+.team-image.team-image-rounded img{
+	border-radius:50%;
+}
+.team-content{
+	overflow:hidden;
+}
+.team-title,
+.team-label{
+	font-family:'Roboto Condensed';
+	text-transform:uppercase;
+	margin-bottom:0;
+}
+.team-title{
+	font-size:21px;
+}
+.team-label{
+	font-weight:300;
+	margin-bottom:20px;
+}
+@media(min-width:480px){
+	.gears-team-inlined .team-image{
+		width:40%;
+		float:left;
+		margin-right:15px;
+		margin-bottom:0;
+	}
+}
+/********************************************************************/
+/* Gears Accordion - Gears FAQs */
+/********************************************************************/
+/* FAQs - Default View */
+.gears-faqs .panel {
+    margin-bottom:15px;
+	padding:10px 15px;
+    background-color:transparent;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 0;
+    box-shadow:none;
+	text-align:left;
+}
+.dark .gears-faqs .panel {
+	border-color:rgba(255,255,255,0.15);
+}
+.gears-faqs .panel-toggle{
+	font-family:"Roboto Condensed";
+	font-size:1.25em;
+	padding-right:45px;
+	display:block;
+	position:relative;
+}
+.gears-faqs .panel-toggle:before{
+	width:30px;
+	content:"-";
+	display:inline-block;
+	position:absolute;
+	right:0;
+	margin-left:15px;
+	background:rgba(0,0,0,0.05);
+	font-family:"Roboto";
+	text-align:center;
+	text-decoration:none;
+}
+.gears-faqs .panel-toggle.collapsed:before{
+	content:"+";
+}
+/********************************************************************/
+/* Gears Tabs */
+/********************************************************************/
+.gears-tabs ul.nav{
+	margin-bottom:15px;
+}
+.gears-tabs ul.nav-tabs li,
+.gears-tabs ul.nav-pills li{
+	font-family:"Roboto Condensed";
+}
+.gears-tabs ul.nav-tabs li:first-child{
+	margin-left:10px;
+}
+.gears-tabs .nav-pills > li + li {
+    margin-left: 5px;
+}
+.gears-tabs .nav-pills > li > a {
+    border-radius: 3px;
+	background:rgba(0,0,0,0.05);
+}
+.gears-tabs .nav-pills > li > a:hover {
+	background:rgba(0,0,0,0.1);
+}
+.gears-tabs .nav-pills > li.active > a {
+	background:#1977d3;
+}
+/********************************************************************/
+/* Gears Timeline */
+/********************************************************************/
+.timeline {
+    list-style: none;
+    padding: 15px 0;
+    position: relative;
+	text-align:left;
+}
+.timeline:before {
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    content:" ";
+    width: 5px;
+    background: #ffffff;
+	border-radius:3px;
+	margin:0 15px;
+}
+.timeline > li {
+    margin-bottom: 25px;
+    position: relative;
+    width: 100%;
+}
+.timeline > li:last-child {
+    margin-bottom: 0px;
+}
+.timeline > li:after {
+    content:" ";
+    display: table;
+}
+.timeline > li:after {
+    clear: both;
+}
+.timeline > li > .timeline-panel {
+    width: calc(100% - 45px);
+    float: right;
+	position: relative;
+	margin-bottom: 30px;
+	background:#FFFFFF;
+	padding:20px;
+	border-radius:5px;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.10);
+	color:#9E9E9E;
+}
+.timeline > li > .timeline-panel:before {
+    position: absolute;
+    top: 23px;
+    left: -10px;
+    display: inline-block;
+    border-top: 10px solid transparent;
+    border-right: 10px solid #ffffff;
+    border-left: 0 solid #ffffff;
+    border-bottom: 10px solid transparent;
+    content:" ";
+}
+.timeline > li > .timeline-badge {
+	background:#EEEEEE;
+	border:5px solid #FFFFFF;
+    width: 15px;
+    height: 15px;
+	margin:10px;
+	border-radius:50%;
+	text-align:center;
+    position: absolute;
+    top: 15px;
+    z-index: 100;
+}
+.timeline .timeline-title{
+	font-family:'Roboto Condensed';
+	font-size:24px;
+	line-height:1.2;
+	padding:10px 0;
+	margin:0;
+}
+.timeline .timeline-date{
+	font-family:'Roboto Condensed';
+	color:#fff;
+	line-height:1;
+	text-transform:uppercase;
+	display:inline-block;
+	padding:5px 15px;
+	background:#1977d3;
+	border-radius:3px;
+	margin-bottom:0;
+}
+@media(min-width:768px){
+.timeline:before {
+	left:50%;
+	margin-left:-2.5px;
+}
+.timeline > li {
+    width: 50%;
+	float:left;
+	clear:left;
+}	
+.timeline > li:before, .timeline > li:after {
+    content:" ";
+    display: table;
+}
+.timeline > li:nth-child(2n){
+	top:30px;
+}	
+.timeline > li.timeline-inverted {
+	float:right;
+	clear:right;
+}	
+.timeline > li > .timeline-panel {
+    float: left;
+    width: calc(100% - 35px);
+}
+.timeline > li.timeline-inverted > .timeline-panel{
+	float:right;
+}	
+.timeline > li > .timeline-panel:before {
+	left:auto;
+    right: -10px;
+    border-top: 10px solid transparent;
+    border-left: 10px solid #ffffff;
+    border-right: 0;
+    border-bottom: 10px solid transparent;
+}
+.timeline > li.timeline-inverted > .timeline-panel:before {
+	right:auto;
+	left:-10px;
+    border-right: 10px solid #ffffff;
+    border-left: 0;
+}
+.timeline > li > .timeline-badge {
+	right:-17px;
+}
+.timeline > li.timeline-inverted > .timeline-badge {
+	right:auto;
+	left:-18px;
+}
+}
+
+/********************************************************************/
+/* Gears Events Log */
+/********************************************************************/
+.eventslog{
+	list-style:none;
+	margin:0;
+	padding:0;
+	position:relative;
+}
+.eventslog:before {
+    top: 0;
+    bottom: 0;
+	left:90px;
+    position: absolute;
+    content:" ";
+    width:1px;
+	border-left:1px dashed rgba(0,0,0,.35);
+}
+.dark .eventslog:before ,
+.eventslog.dark:before {
+	border-left:1px dashed rgba(255,255,255,.2);
+}
+.eventslog > li {
+    margin-bottom: 25px;
+    position: relative;
+    width: 100%;
+}
+.eventslog > li.eventslog-year,
+.eventslog-date {
+    display: inline-block;
+	font-family:"Roboto Condensed";
+	font-weight:700;
+    text-transform: uppercase;
+    border-radius: 3px;
+}
+.eventslog > li.eventslog-year{
+    background-color: #1977d3;
+	font-size:24px;
+	color:#FFFFFF;
+    text-align: center;
+	width:180px;
+}
+.eventslog-date{
+	color:#1977d3;
+	line-height:30px;
+}
+.dark .eventslog-date{
+	color:#fff;
+}
+.eventslog-title{
+	font-family:"Roboto Condensed";
+	font-size:24px;
+}
+.eventslog p:last-child{
+	margin-bottom:0;
+}
+.eventslog-toggle{
+	display:none;
+}
+.eventslog-event{
+	background:#FFFFFF;
+	border:1px solid rgba(0,0,0,.15);
+	padding:15px;
+	border-radius:3px;
+}
+.dark .eventslog-event{
+	background:rgba(255,255,255,.05);
+}
+@media (min-width:768px){
+.eventslog:before {
+	left:190px;
+}
+.eventslog > li {
+	width:calc(100% - 230px);
+	left:230px;
+}
+.eventslog > li.eventslog-year{
+	left:100px;
+}
+.eventslog-date{
+	position:absolute;
+	width:140px;
+	left:-230px;
+	text-align:right;
+}
+.eventslog-toggle{
+	display:inline-block;
+	width:30px;
+	height:30px;
+	background:#1977d3;
+	border-radius:15px;
+	position:absolute;
+	left:-55px;
+}
+}
+/********************************************************************/
+/* Testimonials */
+/********************************************************************/
+/* Testimonial Widget */
+.testimonials-widget-thumb{
+	width:150px;
+	height:150px;
+	margin-bottom:15px;
+	border-radius:50%;
+	display:inline-block;
+	overflow:hidden;
+	padding:10px;
+	border:2px solid rgba(0,0,0,0.15);
+	border-bottom-color:transparent;
+}
+.testimonials-widget-thumb-micro{
+	width:90px;
+	height:90px;
+	margin-bottom:10px;
+	padding:7px;
+}
+.dark .testimonials-widget-thumb{
+	border:2px solid #FFFFFF;
+	border-bottom-color:transparent;
+}
+.testimonials-widget-thumb img{
+	width:100%;
+	border-radius:50%;
+}
+.testimonials-widget-text{
+	font-family:"Roboto Slab";
+}
+.testimonials-widget-author{
+	font-family:"Roboto Condensed";
+	font-size:20px;
+	line-height:1;
+	font-weight:700;
+	color:rgba(0,0,0,.87);
+	margin-bottom:0;
+}
+.dark .testimonials-widget-author{
+	color:#FFFFFF;
+}
+.testimonials-widget-credits{
+	font-size:.85em;
+}
+
+/* Gears Widget Slider */
+/* Built over Bootstrap Carousel */
+/* <div id="slider-widget" class="carousel slide gears-widget-slider" data-ride="carousel"> */
+.gears-widget-slider .carousel-inner {
+    margin-bottom: 40px;
+}
+.gears-widget-slider .carousel-indicators {
+    bottom: -20px;
+}
+.gears-widget-slider .carousel-indicators li {
+    border: 2px solid rgba(0,0,0,.35);
+}
+.dark .gears-widget-slider .carousel-indicators li {
+    border: 2px solid rgba(255,255,255,.35);
+}
+.gears-widget-slider .carousel-indicators .active {
+	width:10px;
+	height:10px;
+	margin:1px;
+    border: 2px solid #1977d3;
+}
+/* Bootstrap Carousel Fade Animation */
+/* <div id="slider-widget" class="carousel carousel-fade slide" data-ride="carousel"> */
+.carousel-fade .carousel-inner .item {
+  -webkit-transition-property: opacity;
+          transition-property: opacity;
+}
+.carousel-fade .carousel-inner .item,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  opacity: 0;
+}
+.carousel-fade .carousel-inner .active,
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+.carousel-fade .carousel-inner .next,
+.carousel-fade .carousel-inner .prev,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+.carousel-fade .carousel-control {
+  z-index: 2;
+}
+/* Gears Widget List */
+ul.gears-widget-list{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+ul.gears-widget-list li{
+	margin:0 0 10px 0;
+	padding:0 0 10px 0;
+	border-bottom:1px dotted rgba(0,0,0,0.15);
+	overflow:hidden;
+}
+ul.gears-widget-list li:last-child{
+	border:none;
+}
+/********************************************************************/
+/* Blog */
+/********************************************************************/
+/* Blog Default View */
+.entry {
+	position: relative;
+	margin: 0 0 50px;
+	padding: 0 0 50px;
+	border-bottom: 2px solid #eee;
+}
+.entry-content{
+	overflow:hidden;
+	padding:0 15px;
+}
+.entry-image { 
+	margin-bottom: 30px;
+	position:relative;
+	border-radius:5px;
+	overflow:hidden;
+}
+.entry-image,
+.entry-image img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.entry-image iframe { display: block; }
+.entry-title, .entry-title a{
+	font-family:"Roboto Condensed";
+	color:#212121;
+}
+.entry-title a:hover{
+	color:#1977d3;
+}
+ul.entry-meta{
+	list-style:none;
+	padding:0;
+}
+.entry-meta li{
+	float: left;
+	font-size: 13px;
+	line-height: 14px;
+	font-weight:700;
+	margin: 0px 10px 15px 0px;
+	color: #999;
+}
+.entry-meta li+li::before {
+    content: "/";
+    display: inline-block;
+    margin-right: 10px;
+    opacity: 0.5;
+}
+.entry-meta li i{
+	color:#777;
+	margin-right:5px;
+}
+.entry-meta li a{
+	color:#999;
+}
+.entry-meta li a:hover{
+	color:#1977d3;
+}
+a.entry-read-more{
+	margin-bottom:0;
+}
+/* Post type - Quote/Link */
+.entry-quote .entry-icon,
+.entry-link .entry-icon{
+	float:left;
+	width:auto;
+	margin-right:10px;
+	position:relative;
+}
+.entry-quote .entry-icon i,
+.entry-link .entry-icon i{
+	font-size:36px;
+	background:#F5F5F5;
+	color:#1977d3;
+	display:inline-block;
+	padding:20px;
+}
+.entry-quote .entry-icon::after,
+.entry-link .entry-icon::after{
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    right: 0px;
+    border-width: 0px 30px 30px 0;
+    border-style: solid;
+    border-color: transparent #F5F5F5;
+}
+.entry-quote .entry-title{
+	font-family:'Roboto Slab';
+	font-size:26px;
+	line-height:1.3;
+	margin-bottom:10px;
+}
+/* Recent Widget */
+.recent-blog-widget-focused{
+	margin-bottom:25px;
+}
+.recent-blog-image{
+	border-radius:3px;
+	margin-bottom:15px;
+	overflow:hidden;
+	position:relative;
+}
+.recent-blog-image img{
+	width:100%;
+}
+.recent-blog-category{
+	line-height:1;
+}
+.recent-blog-thumb{
+	float:left;
+	margin-right:15px;
+	width:90px;
+	height:90px;
+	border-radius:50%;
+	padding:7px;
+	border:2px solid rgba(0,0,0,0.15);
+	overflow:hidden;
+}
+.recent-blog-thumb img{
+	width:100%;
+	border-radius:50%;
+}
+.recent-blog-content{
+	overflow:hidden;
+	padding-top:20px;
+}
+.recent-blog-widget-focused .recent-blog-content{
+	overflow:hidden;
+	padding:0 10px;
+}
+.recent-blog-title{
+	font-family:"Roboto Condensed";
+	font-size:1.1em;
+	line-height:1.3;
+	margin-bottom:10px;
+}
+.recent-blog-widget-focused .recent-blog-title{
+	font-size:1.35em;
+}
+.recent-blog-title a{
+	color:rgba(0,0,0,0.80);
+}
+.recent-blog-title a:hover{
+	color:#1977d3;
+}
+.dark .recent-blog-title a{
+	color:rgba(255,255,255,0.7);
+}
+.recent-blog-meta{
+	font-size:12px;
+	line-height:1;
+}
+.recent-blog-widget-focused .recent-blog-meta{
+	font-size:14px;
+}
+.recent-blog-meta i{
+	margin-right:5px;
+}
+.recent-blog-meta span{
+	margin-right:10px;
+}
+/********************************************************************/
+/* Inner Pages */
+/********************************************************************/
+
+
+/*************************************************************************************************************/
+/* Scroll to the Top Button */
+/*************************************************************************************************************/
+a.scrollup, a.scrollup:focus, a.scrollup:active {
+	width: 50px;
+	height: 55px;
+	position: fixed;
+	bottom: -10px;
+	right: 20px;
+	display: none;
+	border-radius: 3px 3px 0 0;
+	font-size: 20px;
+	text-align: center;
+	color: #fff;
+	background: rgba(0,0,0,0.5);
+	padding-top: 10px;
+}
+a.scrollup:hover {
+	background: rgba(51,122,183,1);
+	bottom: 0;
+}
+
+/*************************************************************************************************************/
+/* 	Owl Carousel Owl Demo Theme 
+/*	v1.3.3
+/*************************************************************************************************************/
+.owl-theme .owl-controls{
+	margin-top: 10px;
+	text-align: center;
+}
+/* Styling Next and Prev buttons */
+.owl-theme .owl-controls .owl-buttons div{
+	color: #FFF;
+	display: inline-block;
+	zoom: 1;
+	*display: inline;/*IE7 life-saver */
+	margin: 5px;
+	padding: 3px 10px;
+	font-size: 12px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	background: #869791;
+	filter: Alpha(Opacity=50);/*IE7 fix*/
+	opacity: 0.5;
+}
+/* Clickable class fix problem with hover on touch devices */
+/* Use it for non-touch hover action */
+.owl-theme .owl-controls.clickable .owl-buttons div:hover{
+	filter: Alpha(Opacity=100);/*IE7 fix*/
+	opacity: 1;
+	text-decoration: none;
+}
+/* Styling Pagination*/
+.owl-theme .owl-controls .owl-page{
+	display: inline-block;
+	zoom: 1;
+	*display: inline;/*IE7 life-saver */
+}
+.owl-theme .owl-controls .owl-page span{
+	display: block;
+	width: 12px;
+	height: 12px;
+	margin: 5px 7px;
+	filter: Alpha(Opacity=50);/*IE7 fix*/
+	opacity: 0.5;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	background: #869791;
+}
+.owl-theme .owl-controls .owl-page.active span,
+.owl-theme .owl-controls.clickable .owl-page:hover span{
+	filter: Alpha(Opacity=100);/*IE7 fix*/
+	opacity: 1;
+}
+/* If PaginationNumbers is true */
+.owl-theme .owl-controls .owl-page span.owl-numbers{
+	height: auto;
+	width: auto;
+	color: #FFF;
+	padding: 2px 10px;
+	font-size: 12px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+}
+/* preloading images */
+.owl-item.loading{
+	min-height: 150px;
+	background: url(img/AjaxLoader.gif) no-repeat center center
+}
+/* Custom owl mods */
+.gears-carousel-item{
+	margin:0 7px;
+}

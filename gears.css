@@ -310,6 +310,7 @@ a.g-btn-alt{
 .topbar ul > li:last-child{
 	margin-right:0;
 }
+/* Avoid it */
 .topbar strong{
 	text-transform:uppercase;
 }
